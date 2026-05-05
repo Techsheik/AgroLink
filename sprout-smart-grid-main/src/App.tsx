@@ -29,6 +29,7 @@ import ManageUsers from "./pages/admin/ManageUsers";
 import VerifyBuyers from "./pages/admin/VerifyBuyers";
 import CropListings from "./pages/admin/CropListings";
 import SystemStats from "./pages/admin/SystemStats";
+import AdminLogin from "./pages/admin/AdminLogin";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/pending-verification" element={<PendingVerification />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
 
             {/* Farmer */}
             <Route path="/farmer" element={<ProtectedRoute allowedRoles={["farmer"]}><FarmerDashboard /></ProtectedRoute>} />

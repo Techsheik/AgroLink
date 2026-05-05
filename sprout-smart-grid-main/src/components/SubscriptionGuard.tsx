@@ -51,7 +51,7 @@ export const SubscriptionGuard: React.FC<SubscriptionGuardProps> = ({ children }
   if (isLoading) return null;
 
   // Admin and Superusers bypass
-  if (user?.role === "admin" || user?.is_superuser) return <>{children}</>;
+  if (user?.role?.toUpperCase() === "ADMIN" || user?.is_superuser) return <>{children}</>;
 
   // Calculate trial expiration (7 days)
   const trialStart = new Date(user?.trial_start_date || new Date());

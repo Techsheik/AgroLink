@@ -1,4 +1,5 @@
 import os
+import re
 from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 
@@ -22,7 +23,6 @@ class Settings(BaseSettings):
         # The user's working IP is 51.21.18.29
         if "51.21.18.29" not in SQLALCHEMY_DATABASE_URI:
             # We only replace the hostname part
-            import re
             # Replace hostname with IP
             SQLALCHEMY_DATABASE_URI = re.sub(r'@[^:/]+', '@51.21.18.29', SQLALCHEMY_DATABASE_URI)
             # Also ensure port is 6543 for the pooler/IP connection

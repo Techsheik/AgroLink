@@ -23,6 +23,12 @@ export function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) 
 
       try {
         const userData = await authApi.getMe();
+        console.log("Auth Debug - User Data:", userData);
+        console.log("Auth Debug - Role Check:", {
+          userRole: userData.role,
+          allowedRoles,
+          mappedRoles: allowedRoles?.map(r => r.toUpperCase())
+        });
         setUser(userData);
       } catch (error) {
         console.error("Auth check failed:", error);
@@ -46,18 +52,19 @@ export function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) 
 
   const token = localStorage.getItem("token");
   if (!token) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    const loginPath = location.pathname.startsWith("/admin") ? "/admin/login" : "/login";
+    return <Navigate to={loginPath} state={{ from: location }} replace />;
   }
 
-  if (token && user && !user.is_verified && user.role !== "ADMIN" && location.pathname !== "/pending-verification") {
+  if (token && user && !user.is_verified && user.role.toUpperCase() !== "ADMIN" && location.pathname !== "/pending-verification") {
     return <Navigate to="/pending-verification" replace />;
   }
 
-  if (user && allowedRoles && !allowedRoles.map(r => r.toUpperCase()).includes(user.role)) {
+  if (user && allowedRoles && !allowedRoles.map(r => r.toUpperCase()).includes(user.role.toUpperCase())) {
     // Redirect to their appropriate dashboard if they have the wrong role
     const defaultPath = 
-      user.role === "ADMIN" ? "/admin" : 
-      user.role === "FARMER" ? "/farmer" : 
+      user.role.toUpperCase() === "ADMIN" ? "/admin" : 
+      user.role.toUpperCase() === "FARMER" ? "/farmer" : 
       "/buyer";
     return <Navigate to={defaultPath} replace />;
   }

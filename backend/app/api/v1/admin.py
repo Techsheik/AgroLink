@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Any, List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
@@ -88,9 +88,9 @@ def get_platform_stats(
     
     # Weekly activity (last 7 days)
     weekly_activity = []
-    now_dt = datetime.now()
+    now_dt = datetime.now(timezone.utc)
     # Normalize now to start of day for consistent grouping
-    today = datetime(now_dt.year, now_dt.month, now_dt.day)
+    today = datetime(now_dt.year, now_dt.month, now_dt.day, tzinfo=timezone.utc)
     
     for i in range(7):
         day = today - timedelta(days=6-i)
@@ -146,7 +146,7 @@ def extend_subscription(
         raise HTTPException(status_code=404, detail="User not found")
     
     # If currently expired or not subscribed, start from now
-    now = datetime.now()
+    now = datetime.now(timezone.utc)
     if not user.subscription_expiry or user.subscription_expiry < now:
         user.subscription_expiry = now + timedelta(days=days)
     else:

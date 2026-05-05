@@ -19,6 +19,7 @@ export default function Login() {
     setIsLoading(true);
     try {
       const response = await authApi.login({ username: email.trim(), password });
+      console.log("Login Debug - Response:", response);
       localStorage.setItem("token", response.access_token);
       localStorage.setItem("role", response.role);
       localStorage.setItem("is_verified", String(response.is_verified));
