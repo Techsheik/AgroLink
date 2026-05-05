@@ -1,0 +1,56 @@
+================================================================================
+AGROLINK NIGERIA - COMPLETE WEBSITE FEATURES & GUIDE
+================================================================================
+
+1. CORE PLATFORM ARCHITECTURE
+-----------------------------
+*   **Role-Based Access Control (RBAC)**: Distinct dashboards and permissions for Farmers, Buyers, and Admins.
+*   **7-Day Free Trial**: New users get full access for 7 days to explore the platform.
+*   **Premium Subscription**: Monthly fee of 2,000 Naira for continued full access after the trial.
+*   **Security**: JWT-based authentication and secure password hashing.
+*   **Dark Mode**: Full support for light and dark themes across all pages.
+
+2. FARMER FEATURES
+------------------
+*   **Crop Management**: Add, edit, and delete crop listings (Grains, Tubers, Fruits, etc.).
+*   **Inventory Control**: Mark crops as sold out or update available quantities.
+*   **Smart Buyer Matching**: AI-powered suggestions of potential buyers based on crop type and region.
+*   **Payment Verification**: View uploaded payment receipts from buyers and verify them before shipping.
+*   **Delivery Management**: Update order status (Processing -> Shipped -> In Transit -> Delivered).
+*   **Direct Chat**: Real-time communication with interested buyers.
+*   **Analytics**: Track total revenue, active listings, and new purchase requests.
+
+3. BUYER FEATURES
+------------------
+*   **Marketplace Browsing**: Search and filter crops from verified farmers across Nigeria.
+*   **Purchase Requests**: Send formal requests to farmers with custom quantities and messages.
+*   **Payment Workflow**: Upload proof of bank transfer (receipts) directly to the order.
+*   **Delivery Tracking**: Monitor the 5-stage delivery process in real-time with a visual stepper.
+*   **Confirm Receipt**: Securely signify when a delivery has been received to finalize the deal.
+*   **Saved Listings**: Bookmark interesting crops to compare or purchase later.
+*   **Chat System**: Negotiate directly with farmers via the built-in messaging center.
+
+4. ADMIN COMMAND CENTER
+-----------------------
+*   **Platform Dashboard**: Dynamic statistics on users, crops, revenue, and regional activity.
+*   **User Verification**: Review National Identity Number (NIN) uploads to verify new accounts.
+*   **Subscription Control**: Manually extend any user's trial or subscription (add +7 or +30 days).
+*   **Global Moderation**: Oversight of all crop listings and user accounts.
+*   **Regional Analytics**: View top-performing states and LGAs in terms of trade volume.
+
+5. SMART INTELLIGENCE
+---------------------
+*   **Market Price Trends**: Automated calculation of average prices per crop category.
+*   **Daily Price Change Index**: Compares today's prices with yesterday's to show trends (Up/Down/Stable).
+*   **Regional Proximity Matching**: Connects farmers and buyers within the same geographical area.
+
+6. TECHNICAL STACK
+------------------
+*   **Backend**: Python (FastAPI) + SQLAlchemy ORM.
+*   **Frontend**: React (Vite) + TypeScript + Tailwind CSS.
+*   **Database**: PostgreSQL (Supabase) with optimized connection pooling.
+*   **Cloud Storage**: Supabase Storage for NIN cards and payment receipts.
+
+================================================================================
+Developed for the Nigerian Agricultural Ecosystem
+================================================================================

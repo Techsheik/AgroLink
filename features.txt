@@ -1,0 +1,68 @@
+AgroLink Nigeria - Platform Features & Documentation
+===================================================
+
+AgroLink is a comprehensive, AI-powered agricultural marketplace designed specifically for the Nigerian ecosystem. It connects farmers directly with buyers, provides market intelligence, and streamlines the entire trade lifecycle from planting to delivery.
+
+1. User Roles & Access Control (RBAC)
+-------------------------------------
+* Farmer: Can list crops, manage inventory, receive purchase requests, chat with buyers, and track deliveries.
+* Buyer: Can browse the marketplace, save crops, send purchase requests, upload payment proof, and track their orders.
+* Admin: Oversees the platform, verifies new users (NIN verification), manages listings, and monitors system stats.
+
+2. Localized Identity Verification (NIN)
+-----------------------------------------
+* Registration requires uploading a National Identity Number (NIN) card image.
+* Farmers and Buyers are placed in a "Pending Verification" state upon registration.
+* Admins must manually review the NIN and profile details (State of Origin, LGA) before granting full access to the dashboard.
+
+3. AI-Powered Smart Matching & Recommendations
+----------------------------------------------
+* Buyer Recommendations: Suggests crops to buyers based on their location and historical popular trends.
+* Farmer Recommendations: Suggests potential buyers to farmers based on proximity and buyer interest in similar crops.
+* AI Crop Advisor: (For Farmers) Provides insights on what crops to plant based on farm size, soil type, and location.
+
+4. Dynamic Digital Marketplace
+------------------------------
+* Real-time Listings: Farmers can list crops with images, prices, and quantities.
+* Search & Filter: Buyers can filter crops by category, location, and price.
+* "Save for Later": Buyers can save interesting listings to their personal watchlist.
+
+5. Secure Trade & Payment Lifecycle
+------------------------------------
+* Purchase Requests: Buyers send formal requests to farmers to initiate a trade.
+* Real-time Chat: Integrated messaging system allows farmers and buyers to negotiate concurrently.
+* Bank Transfer Integration: Once a request is accepted, buyers upload a screenshot of their bank transfer receipt.
+* Payment Verification: Farmers verify the receipt before initiating the delivery process.
+
+6. Transparent Delivery Tracking System
+---------------------------------------
+* Delivery Stepper: A visual 5-step progress bar (Pending -> Shipped -> In Transit -> Delivered -> Confirmed).
+* Farmer Controls: Farmers push status updates as the goods move through the logistics chain.
+* Buyer Confirmation: Buyers signify successful receipt, which finalizes the transaction status to "Completed".
+
+7. Market Intelligence & Price Index
+------------------------------------
+* Live Price Tracking: Real-time dashboard showing average prices for major crops (Maize, Rice, Cocoa, etc.).
+* Trend Analysis: 24h price changes and visual trend indicators (Up/Down) to help users time their sales/purchases.
+
+8. Monetization & Subscription Model
+-------------------------------------
+* 7-Day Free Trial: New users get full access for 7 days to explore the platform.
+* Premium Subscription: A fee of ₦2,000/month is required after the trial to continue listing and requesting.
+* Admin Management: Admins can manually extend trials or subscriptions for individual users.
+
+9. Nigeria-Centric Design & Infrastructure
+-------------------------------------------
+* Regional Logic: Built-in support for all 36 States and LGAs.
+* Dark Mode Support: Users can toggle between light and dark modes for better readability.
+* Direct IP Routing: Backend optimized for stability in various network conditions across Nigeria.
+
+How It Works (Summary)
+----------------------
+1. Sign Up: Register and upload your NIN.
+2. Verify: Wait for Admin approval (Safety first).
+3. Connect: Use AI recommendations or browse the marketplace.
+4. Trade: Send/Accept requests and chat to finalize details.
+5. Pay: Upload payment proof securely.
+6. Deliver: Track the journey of your goods in real-time.
+7. Confirm: Finalize the deal once goods arrive.

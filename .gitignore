@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build and project specific
+run.bat
+.zencoder/
+.zenflow/
+.gemini/
+.vscode/
+.idea/
+*.swp
+*.swo

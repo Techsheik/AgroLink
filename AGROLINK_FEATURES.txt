@@ -1,0 +1,127 @@
+================================================================================
+AGROLINK NIGERIA - PLATFORM FEATURES & TECHNICAL SPECIFICATIONS
+================================================================================
+
+1. GENERAL CORE FEATURES
+-------------------------
+* ROLE-BASED ACCESS CONTROL (RBAC):
+  - Function: Strictly separates functionalities for Farmers, Buyers, and Admins.
+  - How it works: A 'ProtectedRoute' component checks the user's role stored in 
+    the database before granting access to specific dashboards.
+
+* 7-DAY FREE TRIAL & SUBSCRIPTION SYSTEM:
+  - Function: Monetization and user onboarding.
+  - How it works: New users get 7 days of full access. A live countdown shows 
+    time remaining. After 7 days, a blurry "Subscription Guard" overlay blocks 
+    the dashboard until a monthly fee of 2,000 Naira is paid.
+
+* LIVE MARKETPLACE PREVIEW:
+  - Function: Public-facing attraction for new users.
+  - How it works: The landing page fetches real crop listings from the database. 
+    If an unauthenticated user tries to interact, an "Auth Guard" prompts them 
+    to register or login.
+
+* DARK MODE SUPPORT:
+  - Function: Visual comfort and modern UI.
+  - How it works: A theme toggle allows users to switch between Light and Dark 
+    modes, with styles built using Tailwind CSS and Shadcn UI.
+
+
+2. FARMER FEATURES
+-------------------
+* CROP LISTING MANAGEMENT:
+  - Function: Farmers can list, edit, or remove their agricultural products.
+  - How it works: Farmers upload name, category, price, and location. Listings 
+    can be marked as 'Sold' to remove them from active search.
+
+* SMART BUYER MATCHING:
+  - Function: Proactive sales suggestions.
+  - How it works: A backend scoring engine ranks buyers based on geographic 
+    proximity and their historical interest in the specific crops the farmer grows.
+
+* PAYMENT VERIFICATION:
+  - Function: Secure transaction handling.
+  - How it works: When a buyer marks an order as paid, the farmer receives a 
+    notification and a "Verify Payment" button. They can view the buyer's 
+    uploaded receipt before finalizing the order.
+
+* REAL-TIME MESSAGING:
+  - Function: Direct negotiation.
+  - How it works: Farmers can chat directly with buyers who send requests or 
+    reach out to recommended buyers to start a deal.
+
+
+3. BUYER FEATURES
+------------------
+* MARKETPLACE & SEARCH:
+  - Function: Find and filter local crops.
+  - How it works: Buyers browse all live listings with details on price per unit, 
+    location, and farmer verification status.
+
+* PURCHASE REQUESTS:
+  - Function: Direct ordering.
+  - How it works: Buyers send formal requests specifying quantity and a message. 
+    Once accepted by the farmer, it moves to the "Make Payment" stage.
+
+* BANK TRANSFER PAYMENT FLOW:
+  - Function: Localized payment handling.
+  - How it works: After acceptance, buyers click "Make Payment" and upload a 
+    URL/Proof of their bank transfer receipt for the farmer to see.
+
+* TRANSPARENT DELIVERY TRACKING:
+  - Function: Order fulfillment transparency.
+  - How it works: A 5-step delivery stepper (Processing, Shipped, In Transit, 
+    Delivered, Confirmed) allows both buyer and farmer to track progress. 
+    Farmers update the status and provide optional tracking numbers/notes.
+    Buyers click "Confirm Receipt" to finalize the entire transaction.
+
+* SAVED LISTINGS:
+  - Function: Personal wishlist.
+  - How it works: Buyers can "Heart" crops to save them for later comparison 
+    in their personal dashboard.
+
+
+4. ADMIN FEATURES
+------------------
+* DYNAMIC COMMAND CENTER:
+  - Function: Total platform oversight.
+  - How it works: A live dashboard showing total users, verified farmers, 
+    active listings, and global volume in real-time.
+
+* USER IDENTITY VERIFICATION (NIN):
+  - Function: Trust and Safety.
+  - How it works: Admins review uploaded National Identity Number (NIN) images 
+    from the "Verify" tab before granting users full "Verified" status.
+
+* SUBSCRIPTION MANAGEMENT:
+  - Function: Customer support & promotions.
+  - How it works: Admins can manually add +7 or +30 days to any specific user's 
+    subscription directly from the "Manage Users" table.
+
+* GLOBAL LISTING MODERATION:
+  - Function: Quality control.
+  - How it works: Admins can see every crop listing on the platform and 
+    intervene if necessary.
+
+
+5. INTELLIGENCE & DATA
+-----------------------
+* MARKET PRICE INDEX (AUTOMATED):
+  - Function: Pricing guidance for users.
+  - How it works: The backend automatically calculates the "Market Average" for 
+    categories (Grains, Tubers, etc.) based on all platform listings.
+
+* HISTORICAL PRICE TRACKING:
+  - Function: Accurate trend analysis.
+  - How it works: The system takes a daily "snapshot" of average prices. It 
+    compares today's price against yesterday's to show real % changes 
+    (Increasing/Decreasing/Stable).
+
+
+6. TECHNICAL INFRASTRUCTURE
+----------------------------
+* Backend: FastAPI (Python) with SQLAlchemy ORM.
+* Frontend: React (Vite) with TypeScript.
+* Database: PostgreSQL (Supabase) with Transaction Pooling.
+* Security: JWT (JSON Web Tokens) for session management and RBAC.
+================================================================================
